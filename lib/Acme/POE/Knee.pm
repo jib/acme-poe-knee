@@ -1,9 +1,9 @@
 package Acme::POE::Knee;
+
+#ABSTRACT: Time sliced pony race using the POE kernel.
+
 use strict;
 use POE;
-use vars qw($VERSION);
-
-$VERSION = "1.10";
 
 sub new {
     my $class   = shift;
@@ -81,20 +81,19 @@ sub race {
     $poe_kernel->run();
 }
 
-1;
+q[POE::Knee!];
 
-__END__
+=begin Pod::Coverage
 
-=head1 NAME
+  new
+  race
+  dist
+  ponies
+  run
 
-Acme::POE::Knee - Time sliced pony race using the POE kernel.
+=end Pod::Coverage
 
-
-=head1 REQUIREMENTS
-
-    Acme::POE::Knee requires the POE module to run. You can get that as well
-    from CPAN or look at poe.sourceforge.net
-
+=pod
 
 =head1 SYNOPSIS
 
@@ -113,7 +112,7 @@ Acme::POE::Knee - Time sliced pony race using the POE kernel.
     # win the race.
 
     my $pony = new Acme::POE::Knee (
-    	dist        => 20,
+	      dist   => 20,
         ponies  => {
             'dngor'     => 5,
             'Abigail'   => 5.2,
@@ -173,7 +172,7 @@ course specify your own arguments, as shown in the synopsis.
 
 =head1 The Use of Acme::POE::Knee
 
-Use, yes... Usefull? Probably not. This was written in responce to a
+Use, yes... Usefull? Probably not. This was written in response to a
 rather persistant meme on #perl (you know who you are!).
 Basicly, we all wanted ponies.
 Well folks, here it is.
@@ -202,37 +201,6 @@ All forms of feedback are welcome.
 
 POE has a web site where the latest development snapshot, along with
 the Changes file and other stuff may be found: <http://poe.perl.org/>
-
-=item SourceForge
-
-POE's development has moved to SourceForge as an experiment in project
-management.  You can reach POE's project summary page at
-<http://sourceforge.net/projects/poe/>.
-
-=back
-
-=head2 Author
-
-=over 2
-
-=item Jos Boumans
-
-Jos Boumans is <kane_at_cpan.org>.  POE::Knee is his brainchild.
-
-=item Rocco Caputo
-
-Rocco Caputo is <troc+poe@netrus.net>.  POE itself is his creation.
-
-=head2 COPYRIGHT
-
-Copyright (c) 2001, Jos Boumans. All Rights Reserved. This module
-is free software. It may be used, redistributed and/or modified
-under the terms of the Perl Artistic License (see
-http://www.perl.com/perl/misc/Artistic.html)
-
-Except where otherwise noted, POE is Copyright 1998-2001 Rocco Caputo.
-All rights reserved.  POE is free software; you may redistribute it
-and/or modify it under the same terms as Perl itself.
 
 =back
 
